@@ -31,6 +31,11 @@ class Vector(object):
         Vector.equalize_dimensions(a, b)
         return sum([a[i] * b[i] for i in xrange(len(a))])
 
+    # return a unit vector with an angle theta
+    @classmethod
+    def unit(cls, theta):
+        return Vector(sin(theta), cos(theta))
+
     # convert 2 vectors into vectors of the same dimension
     # (return nothing)
     @classmethod
