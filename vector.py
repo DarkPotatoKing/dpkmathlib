@@ -1,6 +1,4 @@
-from __future__ import division
-import math
-import copy
+from utils import *
 
 class Vector(object):
     """Vector object representation"""
