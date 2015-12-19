@@ -1,4 +1,5 @@
 from utils import *
+from vector import Vector
 
 class Fx(object):
     """Object representation for a function"""
@@ -16,6 +17,14 @@ class Fx(object):
         h = 1e-8
         fh_args = [args[i] + h*u[i] for i in xrange(len(args))]
         return (self.val(*fh_args) - self.val(*args)) / h
+
+    # return the value of the partial derivative wrt x at a point
+    def dx(self, *args):
+        return self.du(Vector(1,0), *args)
+
+    # return the value of the partial derivative wrt y at a point
+    def dy(self, *args):
+        return self.du(Vector(0,1), *args)
 
 
 if __name__ == '__main__':
