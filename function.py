@@ -13,7 +13,7 @@ class Fx(object):
     # return the value of the directional derivative at a point in the direction of u
     def du(self, u, *args):
         u = u.normalize()
-        h = 1e-10
+        h = 1e-8
         fh_args = [args[i] + h*u[i] for i in xrange(len(args))]
         return (self.val(*fh_args) - self.val(*args)) / h
 
